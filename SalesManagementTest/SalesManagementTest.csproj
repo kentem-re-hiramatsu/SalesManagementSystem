@@ -49,15 +49,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManagerTest\ProductManagerTest.cs" />
     <Compile Include="ModelTest\ProductTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ManagerTest\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Sales.Core\Sales.Cores.csproj">
       <Project>{ab65b236-2b39-49e2-b7a0-7acd3280ce39}</Project>
