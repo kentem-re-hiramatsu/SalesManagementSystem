@@ -85,6 +85,7 @@
             this.Controls.Add(this.listView1);
             this.Name = "StockForm";
             this.Text = "在庫一覧";
+            this.Load += new System.EventHandler(this.StockForm_Load);
             this.ResumeLayout(false);
 
         }

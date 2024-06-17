@@ -45,7 +45,6 @@
             // ProductLabel
             // 
             this.ProductLabel.AutoSize = true;
-            this.ProductLabel.Enabled = false;
             this.ProductLabel.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.ProductLabel.Location = new System.Drawing.Point(50, 68);
             this.ProductLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -66,7 +65,6 @@
             // PurchaseQuantityLabel
             // 
             this.PurchaseQuantityLabel.AutoSize = true;
-            this.PurchaseQuantityLabel.Enabled = false;
             this.PurchaseQuantityLabel.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.PurchaseQuantityLabel.Location = new System.Drawing.Point(50, 110);
             this.PurchaseQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -78,7 +76,6 @@
             // PurchasePriceLabel
             // 
             this.PurchasePriceLabel.AutoSize = true;
-            this.PurchasePriceLabel.Enabled = false;
             this.PurchasePriceLabel.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.PurchasePriceLabel.Location = new System.Drawing.Point(50, 153);
             this.PurchasePriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -90,7 +87,6 @@
             // SalesPriceLabel
             // 
             this.SalesPriceLabel.AutoSize = true;
-            this.SalesPriceLabel.Enabled = false;
             this.SalesPriceLabel.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.SalesPriceLabel.Location = new System.Drawing.Point(50, 198);
             this.SalesPriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -102,7 +98,6 @@
             // SalesQuantityLabel
             // 
             this.SalesQuantityLabel.AutoSize = true;
-            this.SalesQuantityLabel.Enabled = false;
             this.SalesQuantityLabel.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.SalesQuantityLabel.Location = new System.Drawing.Point(50, 242);
             this.SalesQuantityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -184,11 +179,11 @@
             this.Controls.Add(this.PurchaseQuantityLabel);
             this.Controls.Add(this.ProductTextBox);
             this.Controls.Add(this.ProductLabel);
-            this.Enabled = false;
             this.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OrderForm";
             this.Text = "仕入処理";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

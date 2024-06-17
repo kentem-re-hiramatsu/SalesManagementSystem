@@ -53,6 +53,7 @@
             this.SalesOrderButton.TabIndex = 0;
             this.SalesOrderButton.Text = "販売処理";
             this.SalesOrderButton.UseVisualStyleBackColor = true;
+            this.SalesOrderButton.Click += new System.EventHandler(this.SalesOrderButton_Click);
             // 
             // PurchaseOrderButton
             // 
@@ -62,6 +63,7 @@
             this.PurchaseOrderButton.TabIndex = 1;
             this.PurchaseOrderButton.Text = "仕入処理";
             this.PurchaseOrderButton.UseVisualStyleBackColor = true;
+            this.PurchaseOrderButton.Click += new System.EventHandler(this.PurchaseOrderButton_Click);
             // 
             // StockListButton
             // 
@@ -71,6 +73,7 @@
             this.StockListButton.TabIndex = 2;
             this.StockListButton.Text = "在庫一覧";
             this.StockListButton.UseVisualStyleBackColor = true;
+            this.StockListButton.Click += new System.EventHandler(this.StockListButton_Click);
             // 
             // OrderListView
             // 
