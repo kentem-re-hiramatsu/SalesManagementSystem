@@ -20,12 +20,26 @@ namespace Sales.Core.Manager
 
         public int GetTotalSalesAmount()
         {
-            return 0;
+            var totalSalesAmount = 0;
+
+            foreach (Product product in _salesList)
+            {
+                totalSalesAmount += product.GetSalesAmount();
+            }
+
+            return totalSalesAmount;
         }
 
         public int GetTotalIncomeAmount()
         {
-            return 0;
+            var TotalIncomeAmount = 0;
+
+            foreach (Product product in _salesList)
+            {
+                TotalIncomeAmount += product.GetIncomeAmount();
+            }
+
+            return TotalIncomeAmount;
         }
     }
 }

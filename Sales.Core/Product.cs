@@ -39,7 +39,7 @@ namespace Sales.Core
             return (SalesPrice - PurchasePrice) * SalesQuantity;
         }
 
-        public void SetStockQuantity(int quantity)
+        public void ProcessSale(int quantity)
         {
             if (quantity > 0 && StockQuantity >= quantity)
             {
