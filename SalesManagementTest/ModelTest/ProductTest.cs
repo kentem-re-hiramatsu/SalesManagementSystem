@@ -16,30 +16,9 @@ namespace SalesManagementTest.ModelTest
             var product = new Product("りんご", 5, 50, 120);
 
             Assert.AreEqual("りんご", product.ProductName);
-            Assert.AreEqual(5, product.PurchaseQuantity);
-            Assert.AreEqual(2, product.SalesQuantity);
-            Assert.AreEqual(120, product.PurchasePrice);
-        }
-
-        /// <summary>
-        /// 商品名に数値が入力されたとき
-        /// </summary>
-        [TestMethod]
-        public void PurchaseOrderInputNameErrorTest()
-        {
-            Assert.ThrowsException<Exception>(() => new Product(0, -1, 50, 120));
-            Assert.ThrowsException<Exception>(() => new Product(-1, -1, 50, 120));
-        }
-
-        /// <summary>
-        /// 仕入れ数、仕入れ価格、販売価格に文字列が入力されたとき
-        /// </summary>
-        [TestMethod]
-        public void PurchaseOrderInputStringErrorTest()
-        {
-            Assert.ThrowsException<Exception>(() => new Product("みかん", 50, 6, 120));
-            Assert.ThrowsException<Exception>(() => new Product("みかん", 50, "6", 120));
-            Assert.ThrowsException<Exception>(() => new Product("みかん", 50, 6, "120"));
+            Assert.AreEqual(5, product.StockQuantity);
+            Assert.AreEqual(50, product.PurchasePrice);
+            Assert.AreEqual(120, product.SalesPrice);
         }
 
         /// <summary>
@@ -65,10 +44,10 @@ namespace SalesManagementTest.ModelTest
         public void PurchaseOrderSetStockQuantityTest()
         {
             var product = new Product("みかん", 5, 50, 120);
-            Assert.AreEqual(0, product.StockQuantity);
+            Assert.AreEqual(5, product.StockQuantity);
 
-            product.SetPurchaseQuantity(4);
-            Assert.AreEqual(4, product.StockQuantity);
+            product.SetStockQuantity(4);
+            Assert.AreEqual(1, product.StockQuantity);
         }
 
         /// <summary>
@@ -78,9 +57,9 @@ namespace SalesManagementTest.ModelTest
         public void PurchaseOrderStockQuantityErrorTest()
         {
             var product = new Product("みかん", 5, 50, 120);
-            Assert.ThrowsException<Exception>(() => product.SetPurchaseQuantity(6));
-            Assert.ThrowsException<Exception>(() => product.SetPurchaseQuantity(0));
-            Assert.ThrowsException<Exception>(() => product.SetPurchaseQuantity(-1));
+            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(6));
+            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(0));
+            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(-1));
         }
 
         /// <summary>
@@ -90,7 +69,7 @@ namespace SalesManagementTest.ModelTest
         public void PurchaseOrderPurchaseQuantityErrorTest()
         {
             var product = new Product("みかん", 5, 50, 120);
-            product.SetPurchaseQuantity(4);
+            product.SetStockQuantity(4);
 
             int salesAmount = 120 * 4;
             int IncomeAmount = salesAmount - 50 * 4;
