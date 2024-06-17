@@ -46,7 +46,7 @@ namespace SalesManagementTest.ModelTest
             var product = new Product("みかん", 5, 50, 120);
             Assert.AreEqual(5, product.StockQuantity);
 
-            product.SetStockQuantity(4);
+            product.ProcessSale(4);
             Assert.AreEqual(1, product.StockQuantity);
         }
 
@@ -57,9 +57,9 @@ namespace SalesManagementTest.ModelTest
         public void PurchaseOrderStockQuantityErrorTest()
         {
             var product = new Product("みかん", 5, 50, 120);
-            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(6));
-            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(0));
-            Assert.ThrowsException<Exception>(() => product.SetStockQuantity(-1));
+            Assert.ThrowsException<Exception>(() => product.ProcessSale(6));
+            Assert.ThrowsException<Exception>(() => product.ProcessSale(0));
+            Assert.ThrowsException<Exception>(() => product.ProcessSale(-1));
         }
 
         /// <summary>
@@ -69,14 +69,14 @@ namespace SalesManagementTest.ModelTest
         public void PurchaseOrderPurchaseQuantityErrorTest()
         {
             var product = new Product("みかん", 5, 50, 120);
-            product.SetStockQuantity(4);
+            product.ProcessSale(4);
 
             int salesPrice = 120;
-            int PurchasePrice = 50;
-            int SalesQuantity = 4;
+            int purchasePrice = 50;
+            int salesQuantity = 4;
 
-            int salesAmount = salesPrice * SalesQuantity;
-            int IncomeAmount = (salesPrice - PurchasePrice) * SalesQuantity;
+            int salesAmount = salesPrice * salesQuantity;
+            int IncomeAmount = (salesPrice - purchasePrice) * salesQuantity;
 
             Assert.AreEqual(salesAmount, product.GetSalesAmount());
             Assert.AreEqual(IncomeAmount, product.GetIncomeAmount());
