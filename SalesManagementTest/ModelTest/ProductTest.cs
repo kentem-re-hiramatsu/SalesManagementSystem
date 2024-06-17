@@ -71,8 +71,12 @@ namespace SalesManagementTest.ModelTest
             var product = new Product("みかん", 5, 50, 120);
             product.SetStockQuantity(4);
 
-            int salesAmount = 120 * 4;
-            int IncomeAmount = salesAmount - 50 * 4;
+            int salesPrice = 120;
+            int PurchasePrice = 50;
+            int SalesQuantity = 4;
+
+            int salesAmount = salesPrice * SalesQuantity;
+            int IncomeAmount = (salesPrice - PurchasePrice) * SalesQuantity;
 
             Assert.AreEqual(salesAmount, product.GetSalesAmount());
             Assert.AreEqual(IncomeAmount, product.GetIncomeAmount());
