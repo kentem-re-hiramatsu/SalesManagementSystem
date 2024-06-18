@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManagementSystem", "SalesManagementSystem.csproj", "{99C9A800-B132-491B-94C1-D66F4DEACB3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Cores", "..\Sales.Core\Sales.Cores.csproj", "{AB65B236-2B39-49E2-B7A0-7ACD3280CE39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Cores", "..\Sales.Core\Product.Cores.csproj", "{AB65B236-2B39-49E2-B7A0-7ACD3280CE39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManagementTest", "..\SalesManagementTest\SalesManagementTest.csproj", "{71E74F8E-FA19-4070-B4BC-25240A812B6A}"
 EndProject
