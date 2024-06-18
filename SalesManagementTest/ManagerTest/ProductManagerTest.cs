@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sales.Core;
-using Sales.Core.Manager;
+using Product.Core.Manager;
 
 namespace SalesManagementTest.ManagerTest
 {
@@ -13,8 +12,8 @@ namespace SalesManagementTest.ManagerTest
         public void GetSalesList()
         {
             Assert.AreEqual(0, productmana.SalesList.Count);
-            var mikan = new Product("みかん", 5, 50, 120);
-            var apple = new Product("りんご", 3, 80, 150);
+            var mikan = new Product.Core.Product("みかん", 5, 50, 120);
+            var apple = new Product.Core.Product("りんご", 3, 80, 150);
 
             mikan.ProcessSale(4);
             apple.ProcessSale(2);

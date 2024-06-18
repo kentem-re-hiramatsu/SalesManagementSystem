@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sales.Core.Model;
+using Product.Core.Model;
 using System;
 
 namespace SalesManagementTest.ModelTest
@@ -56,7 +56,7 @@ namespace SalesManagementTest.ModelTest
 
             Assert.AreEqual(salesAmount, sales.GetSalesAmount());
 
-            var purchase = new Purchase("バナナ", 6, 50);
+            var purchase = new Product.Core.Model.Purchase("バナナ", 6, 50);
 
             var purchasePrice = purchase.PurchasePrice;
             var costPrice = purchasePrice * salesQuantity;

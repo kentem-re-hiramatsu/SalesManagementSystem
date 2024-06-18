@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sales.Core.Manager
+namespace Product.Core.Manager
 {
     public class ProductManager
     {

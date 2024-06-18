@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sales.Core.Model;
 using System;
 
 namespace SalesManagementTest.ModelTest
@@ -13,7 +12,7 @@ namespace SalesManagementTest.ModelTest
         [TestMethod]
         public void PurchaseConstructorTest()
         {
-            var purchase = new Purchase("りんご", 5, 80);
+            var purchase = new Product.Core.Model.Purchase("りんご", 5, 80);
             var nowDateTime = DateTime.Now;
 
             Assert.AreEqual("りんご", purchase.ProductName);
@@ -21,11 +20,11 @@ namespace SalesManagementTest.ModelTest
             Assert.AreEqual(80, purchase.PurchasePrice);
             Assert.AreEqual(nowDateTime, purchase.PurchaseDateTime);
 
-            Assert.ThrowsException<Exception>(() => new Purchase("みかん", 0, 90));
-            Assert.ThrowsException<Exception>(() => new Purchase("みかん", -1, 90));
+            Assert.ThrowsException<Exception>(() => new Product.Core.Model.Purchase("みかん", 0, 90));
+            Assert.ThrowsException<Exception>(() => new Product.Core.Model.Purchase("みかん", -1, 90));
 
-            Assert.ThrowsException<Exception>(() => new Purchase("みかん", 5, 0));
-            Assert.ThrowsException<Exception>(() => new Purchase("みかん", 5, -1));
+            Assert.ThrowsException<Exception>(() => new Product.Core.Model.Purchase("みかん", 5, 0));
+            Assert.ThrowsException<Exception>(() => new Product.Core.Model.Purchase("みかん", 5, -1));
         }
     }
 }

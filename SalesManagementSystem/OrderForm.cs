@@ -24,8 +24,6 @@ namespace Sub
             PurchasePriceTextBox.Enabled = _isPurchaseOrder;
             SalesPriceTextBox.Enabled = _isPurchaseOrder;
             SalesQuantityTextBox.Enabled = !_isPurchaseOrder;
-
         }
-
     }
 }

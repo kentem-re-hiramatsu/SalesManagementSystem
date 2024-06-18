@@ -1,4 +1,4 @@
-﻿namespace Sales.Core
+﻿namespace Product.Core
 {
     public class Consts
     {
