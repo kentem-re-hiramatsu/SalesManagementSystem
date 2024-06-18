@@ -11,7 +11,7 @@ namespace SalesManagementTest.ModelTest
         /// 正しくコンストラクタが動作しているか。
         /// </summary>
         [TestMethod]
-        public void PurchaseOrderTest()
+        public void PurchaseConstructorTest()
         {
             var purchase = new Purchase("りんご", 5, 80);
             var nowDateTime = DateTime.Now;
@@ -20,14 +20,7 @@ namespace SalesManagementTest.ModelTest
             Assert.AreEqual(5, purchase.PurchaseQuantity);
             Assert.AreEqual(80, purchase.PurchasePrice);
             Assert.AreEqual(nowDateTime, purchase.PurchaseDateTime);
-        }
 
-        /// <summary>
-        /// 仕入れ数、仕入れ価格に０または-1が入力されたとき
-        /// </summary>
-        [TestMethod]
-        public void PurchaseOrderInputZeroErrorTest()
-        {
             Assert.ThrowsException<Exception>(() => new Purchase("みかん", 0, 90));
             Assert.ThrowsException<Exception>(() => new Purchase("みかん", -1, 90));
 
