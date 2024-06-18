@@ -34,6 +34,17 @@ namespace SalesManagementTest.ModelTest
         }
 
         [TestMethod]
+        public void OverProcessSalesTest()
+        {
+            var sales = new Sales(100, 5);
+            Assert.AreEqual(5, sales.StockQuantity);
+
+            Assert.ThrowsException<Exception>(() => sales.ProcessSales(6));
+            Assert.ThrowsException<Exception>(() => sales.ProcessSales(0));
+            Assert.ThrowsException<Exception>(() => sales.ProcessSales(-1));
+        }
+
+        [TestMethod]
         public void TotaltSalesAmountAndTotalIncomeAmountTest()
         {
             var sales = new Sales(200, 4);
