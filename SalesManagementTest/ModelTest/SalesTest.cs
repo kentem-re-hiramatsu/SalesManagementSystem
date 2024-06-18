@@ -11,9 +11,11 @@ namespace SalesManagementTest.ModelTest
         public void SalesConstructorTest()
         {
             var sales = new Sales(100, 5);
+            var nowDataTime = DateTime.Now;
 
             Assert.AreEqual(100, sales.SalesPrice);
             Assert.AreEqual(5, sales.StockQuantity);
+            Assert.AreEqual(nowDataTime, sales.SalesDataTime);
 
             Assert.ThrowsException<Exception>(() => new Sales(0, 5));
             Assert.ThrowsException<Exception>(() => new Sales(-1, 5));
@@ -56,7 +58,7 @@ namespace SalesManagementTest.ModelTest
 
             Assert.AreEqual(salesAmount, sales.GetSalesAmount());
 
-            var purchase = new Product.Core.Model.Purchase("バナナ", 6, 50);
+            var purchase = new Purchase("バナナ", 6, 50);
 
             var purchasePrice = purchase.PurchasePrice;
             var costPrice = purchasePrice * salesQuantity;

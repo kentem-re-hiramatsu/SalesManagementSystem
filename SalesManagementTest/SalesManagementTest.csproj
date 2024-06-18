@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ManagerTest\ProductManagerTest.cs" />
     <Compile Include="ModelTest\PurchaseTest.cs" />
+    <Compile Include="ModelTest\SalesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,9 +59,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Sales.Core\Sales.Cores.csproj">
+    <ProjectReference Include="..\Sales.Core\Product.Cores.csproj">
       <Project>{ab65b236-2b39-49e2-b7a0-7acd3280ce39}</Project>
-      <Name>Sales.Cores</Name>
+      <Name>Product.Cores</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
